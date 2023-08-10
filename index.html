@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opt-In Page</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="overlay"></div>
+  <h1>Inside the Box</h1>
+  <h2>
+    Tailored Tips for Your Ideal Feline Friend <br />
+    and Expert Advice on Nurturing Your <br />
+    New Purr-sonality
+  </h2>
+  <ul>
+    <li>Uncover insights into cat breeds that match your lifestyle and preferences, ensuring a harmonious partnership.</li>
+    <li>Receive a comprehensive guide on raising a happy, healthy cat, covering essentials like nutrition, grooming, and playtime.</li>
+    <li>Learn how to adapt your care routines based on your cat's unique personality, ensuring a strong bond and endless moments of joy.</li>
+    <li>From litter training to teaching tricks, gain insights into effective methods for fostering good behavior and communication.</li>
+  </ul>
+
+  <button id="getGuideBtn">Click here to get</button>
+
+  <div class="modal">
+    <div class="modal-header">
+      <h3>Enter Your Details</h3>
+      <span class="close">&times;</span>
+    </div>
+    <form class="modal-body">
+      <input type="text" id="firstNameInput" placeholder="First Name" />
+      <input type="email" id="emailInput" placeholder="Email" />
+    </form>
+    <div class="modal-footer">
+      <button id="sendGuideBtn">Send me the guide</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    emailjs.init('qXrnf-aj600R1h0dA');
+    const getGuideBtn = document.getElementById("getGuideBtn");
+    const modal = document.querySelector(".modal");
+    const overlay = document.querySelector(".overlay");
+    const closeBtn = document.querySelector(".close");
+    const sendGuideBtn = document.getElementById("sendGuideBtn");
+    const firstNameInput = document.getElementById("firstNameInput");
+    const emailInput = document.getElementById("emailInput");
+
+    getGuideBtn.addEventListener("click", function () {
+      modal.style.display = "block";
+      overlay.style.display = "block";
+    });
+
+    closeBtn.addEventListener("click", function () {
+      modal.style.display = "none";
+      overlay.style.display = "none";
+      firstNameInput.value = "";
+      emailInput.value = "";
+    });
+
+    sendGuideBtn.addEventListener("click", function () {
+      const firstName = firstNameInput.value;
+      const email = emailInput.value;
+
+      if (firstName && email) {
+        const templateParams = {
+          to_email: email,
+          to_name: firstName,
+          subject: "Your Cat Care Guide"
+        };
+
+        emailjs.send("service_95955zy", "template_wj14iln", templateParams).then(
+          function (response) {
+            alert("Email sent successfully!");
+            modal.style.display = "none";
+            overlay.style.display = "none";
+            firstNameInput.value = "";
+            emailInput.value = "";
+          },
+          function (error) {
+            alert("Failed to send email. Please try again later.");
+          }
+        );
+      } else {
+        alert("Please fill in all the fields.");
+      }
+    });
+  </script>
+</body>
+</html>

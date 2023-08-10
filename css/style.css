@@ -1,0 +1,117 @@
+body {
+    background-image: url("https://media.discordapp.net/attachments/1064878065919996005/1098460160759955476/moonsol_grey_british_short_hair_cat_in_heaven_ukiyo-e_art_paste_b1851806-97d6-40a5-841e-77db77fa0850.png?width=1138&height=1138");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+  }
+
+  h1 {
+    font-family: "Bespoke Sans", "Roboto", "serif-sans";
+    margin-top: 85px;
+    margin-left: 85px;
+    font-weight: normal;
+    font-size: 130px;
+    color: rgb(48, 43, 43);
+    text-shadow: 1px 1px 2px white;
+    
+  }
+
+  h2 {
+    font-family: "Alegreya Sans", "Roboto", "sans-serif";
+    font-size: 48px;
+    color: rgb(48, 43, 43);
+    margin-top: 0px;
+    margin-left: 85px;
+    text-shadow: 1px 1px 5px white;
+  }
+
+  ul {
+    font-family: "Alegreya Sans", "Helvetica", "Arial", "sans-serif";
+    font-size: 20px;
+    color: black;
+    margin-top: 50px;
+    margin-left: 85px;
+    list-style-type: disc;
+    background: white;
+    
+  }
+
+  li {
+    margin-bottom: 20px;
+  }
+
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    width: 400px;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    display: none;
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .modal-header h3 {
+    margin: 0;
+  }
+
+  .modal-body {
+    margin-bottom: 20px;
+  }
+
+  .modal-body input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+  }
+
+  .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .modal-footer button, button {
+    padding: 10px 20px;
+    border-radius: 3px;
+    border: none;
+    background-color: rgb(246, 228, 192);
+    color: rgb(48, 43, 43);
+    cursor: pointer;
+  }
+
+  #getGuideBtn {
+    margin-left: 85px;
+    padding: 20px 120px;
+    font-family: "Bespoke Sans", "Roboto", "serif-sans";
+    font-size: 22px;
+  }
+
+  .modal-footer button:hover {
+    background-color: #ecd9bd;
+  }
